@@ -68,7 +68,14 @@ video {
 audio:not([controls]) {
   display: none;
   height: 0; }
+/**
+  * This function is used to center the image
+  */
 
+img {
+  display: block;
+  margin: 0 auto;
+}
 /**
    * Address `[hidden]` styling not present in IE 8/9/10.
    * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
