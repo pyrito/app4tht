@@ -1,13 +1,12 @@
 @charset "UTF-8";
 @import "compass/css3";
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300);
 /**
  * Foundation for Sites by ZURB
  * Version 6.2.3
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-
-
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
    * 1. Set default font family to sans-serif.
@@ -15,7 +14,7 @@
    *    without disabling user zoom.
    */
 html {
-  font-family: sans-serif;
+  font-family: 'Raleway';
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
