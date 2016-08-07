@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<TITLE>Test Input</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function displayLogin (form) {
+    var useName = form.inputName.value
+    var passWord = form.inputPass.value
+    document.write("Welcome " + useName + "!")
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM NAME="myform" ACTION="" METHOD="GET">Enter Username
+ <BR>
+<INPUT TYPE="text" NAME="inputName" VALUE=""><P>
+<FORM NAME="myform" ACTION="" METHOD="GET">Enter Password
+<BR>
+<INPUT TYPE = "text" NAME = "inputPass" VALUE = "" ><P>
+<INPUT TYPE="button" NAME="button" Value="Submit"
+onClick="displayLogin(this.form)">
+</FORM>
+</BODY>
+</HTML>
