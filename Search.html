@@ -86,13 +86,14 @@ style="border:1px solid #000000;">
 <script type ="text/javascript">
 var arr = ["","","",""];
 var appArr=[
-["Unknown","Uknown","Uknown"],["Facebook","Karthik V","socialmedianetworking"],["Twitter","Adit J","socialmedianetworkingopinion"],["LinkedIn","Rishabh T","socialmedianetworking"],["Instagram","Avinash D","socialmedianetworkingphotos"],["ESPN Fantasy","Brian N","socialsportsnews"],["SportsFanLive","Karthik V","socialsportsnews"],["NBC Sports","Adit J","sportsnews"],["Rio 2016","Rishabh T","sportsnews"],["ScoreCenter Live","Avinash D","sportsnews"],["theScore","Brian N","sportsnews"]];
+["Unknown","Uknown","Uknown"],["Facebook","Karthik V","socialmedianetworking"],["Twitter, ","Adit J","socialmedianetworkingopinion"],["LinkedIn","Rishabh T","socialmedianetworking"],["Instagram","Avinash D","socialmedianetworkingphotos"],["ESPN, Yahoo Fantasy Football","Brian N","socialsportsnews"],["SportsFanLive","Karthik V","socialsportsnews"],["NBC Sports","Adit J","sportsnews"],["Rio 2016","Rishabh T","sportsnews"],["ScoreCenter Live","Avinash D","sportsnews"],["theScore","Brian N","sportsnews"]];
 var appCountArr=[0,0,0,0,0,0,0,0,0,0];
 var upDown = 0;
 var count=0;
 var maxInt;
 var topFive=[];
 var finalSet=[0,0,0,0,0];
+var out = "";
 function indexOfMax(carr) {
     if (carr.length === 0) {
         return -1;
@@ -147,20 +148,22 @@ for( i=0;i<5;i++)
     appCountArr.splice(maxInt,maxInt+1);
 
 }
-
-
-for( i=0;i<5;i++)
-{
-
 var x = document.getElementById("myText").value;
 var y = arr.push(x);
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 ctx.fillStyle = "#FF0000";
-ctx.font = "12px Arial";
+ctx.font = "100px Arial";
+
+for( i=0;i<5;i++)
+{
+
+
 if(appArr[topFive[i]][0]!="Unknown")
-ctx.strokeText(appArr[topFive[i]][0],10,25*i+350);
+    if(out.indexOf(appArr[topFive[i]][0])==-1)
+        out+=appArr[topFive[i]][0]+"\n";
 }
+ctx.strokeText(out,10,75*i+50);
 return topFive;
 }
 
