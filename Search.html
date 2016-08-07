@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+
+
+
+
+
+<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP 4 THT</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/animsition.min.css">
+
+    <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-12 columns">
+        <!--<h1>Welcome to Foundation</h1>-->
+      </div>
+    </div>
+
+   <center>
+        <img src="app4tht.jpg" alt="app4tht" width="567" height="102">
+     </center>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<style>
+input[type=text] {
+    width: 250px;
+    margin-top:50px;
+    margin-left:580px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width:300px;
+    
+}
+</style>
+</head>
+
+<h3 style="margin-top: 50px; margin-left:435px; font-size: 25px;"><em>Enter up to 4 search tags, separated by commas.</em>
+</h3>
+
+<h4>
+	<input type="text" id="myText" placeholder="Is there an app for...">
+	
+</h4>
+
+
+
+
+<p ><button onclick="searchFunction()" style="margin-left: 640px; background-color: #98FB98; border-radius: 5px; padding-right: 20px; padding-left: 20px;">Search</button> </p>
+
+<canvas id="myCanvas" width="1800" height="1000"
+style="border:1px solid #000000;">
+</canvas>
+
+<script type ="text/javascript">
+var arr = ["","","",""];
+var appArr=[
+["Unknown","Uknown","Uknown"],["Facebook","Karthik V","socialmedianetworking"],["Twitter","Adit J","socialmedianetworkingopinion"],["LinkedIn","Rishabh T","socialmedianetworking"],["Instagram","Avinash D","socialmedianetworkingphotos"],["ESPN Fantasy","Brian N","socialsportsnews"],["SportsFanLive","Karthik V","socialsportsnews"],["NBC Sports","Adit J","sportsnews"],["Rio 2016","Rishabh T","sportsnews"],["ScoreCenter Live","Avinash D","sportsnews"],["theScore","Brian N","sportsnews"]];
+var appCountArr=[0,0,0,0,0,0,0,0,0,0];
+var upDown = 0;
+var count=0;
+var maxInt;
+var topFive=[];
+var finalSet=[0,0,0,0,0];
+function indexOfMax(carr) {
+    if (carr.length === 0) {
+        return -1;
+    }
+
+    var max = carr[0];
+    var maxIndex = 0;
+
+    for (var i = 1; i < carr.length; i++) {
+        if (carr[i] > max) {
+            maxIndex = i;
+            max = carr[i];
+        }
+    }
+
+    return maxIndex;
+}
+function myFunction() {
+//if(upDown<=4){
+var x = document.getElementById("myText").value;
+
+//var y = arr.push(x);
+arr=x.split(",");
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "#FF0000";
+
+
+for(i=0;i<5;i++)
+{
+//ctx.strokeText(arr[i],10,25*i+350);
+}
+}
+function searchFunction() {
+myFunction();
+for( i=0;i<5;i++)
+{
+    for( j=0;j<10;j++)
+    {
+        if(appArr[j][2].indexOf(arr[i])!=-1)
+        {
+            appCountArr[j]++;
+            
+        }
+        
+    }
+}
+for( i=0;i<5;i++)
+{
+    maxInt = indexOfMax(appCountArr);
+    topFive.push(maxInt);
+    appCountArr.splice(maxInt,maxInt+1);
+
+}
+
+
+for( i=0;i<5;i++)
+{
+
+var x = document.getElementById("myText").value;
+var y = arr.push(x);
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "#FF0000";
+ctx.font = "12px Arial";
+if(appArr[topFive[i]][0]!="Unknown")
+ctx.strokeText(appArr[topFive[i]][0],10,25*i+350);
+}
+return topFive;
+}
+
+
+
+
+</script>
+
+</body>
+</html>
