@@ -18,6 +18,7 @@ body {
   font: 16px/26px "Raleway", sans-serif; }
 
 .form-wrap {
+  background-radius: 10px;
   background-color: #fff;
   width: 320px;
   margin: 3em auto;
