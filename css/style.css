@@ -41,6 +41,10 @@ h2 {
   text-align: center;
 }
 
+h5 {
+  font-size: 80%;
+}
+
 ul.circles {
   margin: 30px auto 60px;
   display: block;
