@@ -19,8 +19,9 @@
     box-shadow: 0 0 3px gray;
 
     background: #f0f0f0 url(Computer_.png);
-    background-position: 80px 50px;
+    background-position: 70px 50px;
     background-repeat: no-repeat;
+    
 }
 
 .ayy {
@@ -47,7 +48,7 @@
     box-shadow: 0 0 3px gray;
 
     background: #f0f0f0 url(Light_Bulb.png);
-    background-position: 100px 40px;
+    background-position: 90px 40px;
     background-repeat: no-repeat;
     background-size: 30%;
 }
